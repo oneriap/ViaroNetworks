@@ -1,0 +1,41 @@
+<form [formGroup]="form" (ngSubmit) = "guardar()">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Nombre</span>
+            </div>
+            <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+        </div>
+        <br/>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Apellidos</span>
+            </div>
+            <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos">
+        </div>
+        <br/>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGenderSelect">Genero</label>
+            </div>            
+            <select class="form-control" id="inputGenderSelect" formControlName="genero">
+                <option value="null" disabled>Seleccione...</option>
+                <option *ngFor="let genero of generos" [ngValue]="genero">
+                    {{genero.descripcion}}
+                  </option>
+            </select>
+        </div>          
+        <br/>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" >Fecha de nacimiento</span>
+            </div>
+            <input type="date" min="1923-01-01" max="2024-01-01"  class="form-control" formControlName="fechaNacimiento">
+        </div>
+    </div>
+
+    <br/>
+    <div class="form-group d-grid">
+        <button class="btn btn-success btn-lg" type="submit">Guardar</button>
+    </div>
+</form>

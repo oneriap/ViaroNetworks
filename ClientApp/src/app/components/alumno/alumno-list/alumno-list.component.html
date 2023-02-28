@@ -1,0 +1,15 @@
+<table class="table table-sm">
+    <tr *ngFor="let alumno of alumnoService.list">
+        <td>{{alumno.nombre}}</td>
+        <td>{{alumno.apellidos}}</td>
+        <td>{{alumno.genero?.descripcion}}</td>
+        <td>{{alumno.fechaNacimiento}}</td>
+        <td>
+            <i class='fas fa-edit' style="color: green;" (click)="editar(alumno)"></i>
+        </td>
+        <td>
+            <i class='far fa-trash-alt' style="color: red;" (click)="deleteAlumno(alumno.id)"></i>
+        </td>
+    </tr>
+</table>
+
